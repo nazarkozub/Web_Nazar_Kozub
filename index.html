@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="header">
+        <!-- Кнопки вибору категорії -->
+        <button class="btn__header" onclick="loadProducts('пиво')">пиво</button>
+        <button class="btn__header" onclick="loadProducts('вино')">вино</button>
+        <button class="btn__header" onclick="loadProducts('')">Весь товар</button>
+
+        <!-- Місце для кнопок сортування -->
+        <div id="sortingButtons"></div>
+
+        <!-- Кнопка відображення кошика і т.д. -->
+        <div class="cart-button" onclick="showCart()">
+            <img src="Корзина.png" id="openCartBtn" alt="Open Cart" onclick="openCart()" style="cursor: pointer; width: 60px; height: auto;">
+            <div class="row" id="container"></div>
+        </div>
+    </header>
+
+    <div id="myModal" class="modal">
+        <div class="modal-content">
+          <span class="close_adv_btn" id="closeAdvBtn">&times;</span>
+          <p id="advertismentTimer"></p>
+        </div>
+    </div>
+  
+    <div id="nonModalWindow" class="non-modal-window">
+        <div class="window-content">
+                <h2>Non modal windowww</h2>
+                <p>Agree or not ?!</p>
+                <ul>
+                    <li id="agreeWindowbtn" class="agree-btn">Agree</li>
+                    <li id="declineWindowBtn" class="close-btn">Decline</li>
+                </ul> 
+        </div>
+    </div>
+
+    <div id="cart">
+        <div class="cart__top">
+            <p style="font-size:50px;">КОШИК</p> 
+            <span class="close_cart_btn" id="closeCartBtn" onclick="closeCart()">x</span>
+        </div>
+        <div id="cart-items"></div>
+    </div>
+
+    <div class="body">
+        <div id="container-id"></div>
+    </div>
+
+    <div>
+        <canvas id="myChart"></canvas>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="products.js"></script>
+    <script src="subscription.js"></script>
+    <script src="advertisment.js"></script>
+    <script src="chart.js"></script>
+</body>
+</html>
